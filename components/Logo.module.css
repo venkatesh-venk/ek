@@ -1,0 +1,40 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mark {
+  width: 46px;
+  height: 34px;
+  flex: none;
+}
+
+.word {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.word1 {
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+  color: var(--navy);
+}
+
+.word2 {
+  font-weight: 700;
+  font-size: 0.62rem;
+  letter-spacing: 0.42em;
+  color: var(--blue);
+  margin-top: 3px;
+}
+
+.wordLight .word1 {
+  color: #ffffff;
+}
+
+.wordLight .word2 {
+  color: #9fc2ee;
+}

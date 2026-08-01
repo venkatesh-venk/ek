@@ -1,0 +1,71 @@
+.wrap {
+  padding: 40px 0 96px;
+}
+
+.band {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: var(--grad-brand);
+  color: #fff;
+  padding: 56px 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+  box-shadow: var(--shadow-lg);
+}
+
+.pattern {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+      circle at 85% 20%,
+      rgba(255, 255, 255, 0.18),
+      transparent 40%
+    ),
+    radial-gradient(circle at 10% 90%, rgba(225, 27, 34, 0.35), transparent 45%);
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  max-width: 620px;
+}
+
+.title {
+  color: #fff;
+  font-size: clamp(1.6rem, 3.4vw, 2.3rem);
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.text {
+  color: rgba(255, 255, 255, 0.86);
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.actions {
+  position: relative;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.outline {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.55);
+  color: #fff;
+}
+
+.outline:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+@media (max-width: 720px) {
+  .band {
+    padding: 40px 26px;
+  }
+}

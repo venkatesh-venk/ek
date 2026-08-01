@@ -1,0 +1,192 @@
+.split {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.h2 {
+  font-size: clamp(1.8rem, 3.6vw, 2.5rem);
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.lead {
+  font-size: 1.1rem;
+  color: var(--slate);
+}
+
+.body {
+  color: var(--slate);
+}
+
+.introActions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 26px;
+}
+
+.introArt {
+  display: grid;
+  gap: 20px;
+}
+
+.missionCard,
+.visionCard {
+  border-radius: var(--radius);
+  padding: 28px 30px;
+  color: #fff;
+  box-shadow: var(--shadow);
+}
+
+.missionCard {
+  background: var(--grad-blue);
+}
+
+.visionCard {
+  background: var(--grad-red);
+}
+
+.missionCard h3,
+.visionCard h3 {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.missionCard p,
+.visionCard p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Stat strip */
+.statStrip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.statBox {
+  text-align: center;
+  padding: 20px;
+}
+
+.statVal {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--navy);
+}
+
+.statLbl {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* Values */
+.valueCard {
+  padding: 28px 24px;
+  height: 100%;
+}
+
+.valueCard:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.valueNum {
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--red);
+}
+
+.valueCard h3 {
+  font-size: 1.12rem;
+  margin: 10px 0 6px;
+}
+
+.valueCard p {
+  color: var(--slate);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Timeline */
+.timeline {
+  max-width: 780px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 90px;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  background: var(--line);
+}
+
+.tItem {
+  display: grid;
+  grid-template-columns: 78px 24px 1fr;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.tYear {
+  font-weight: 800;
+  color: var(--blue-dark);
+  text-align: right;
+}
+
+.tDot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--red);
+  border: 4px solid #fff;
+  box-shadow: 0 0 0 2px var(--red);
+  justify-self: center;
+  z-index: 1;
+}
+
+.tCard {
+  padding: 20px 24px;
+}
+
+.tCard h3 {
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+.tCard p {
+  margin: 0;
+  color: var(--slate);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+  .split {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .statStrip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .tItem {
+    grid-template-columns: 60px 20px 1fr;
+  }
+  .timeline::before {
+    left: 70px;
+  }
+  .tYear {
+    font-size: 0.9rem;
+  }
+}
