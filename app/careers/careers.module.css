@@ -1,0 +1,75 @@
+.perk {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 22px 24px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.perk:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.perkIcon {
+  width: 40px;
+  height: 40px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: var(--grad-brand);
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.jobs {
+  display: grid;
+  gap: 16px;
+}
+
+.job {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px 28px;
+  flex-wrap: wrap;
+}
+
+.job:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+  border-color: rgba(28, 92, 168, 0.28);
+}
+
+.jobDept {
+  display: inline-block;
+  color: var(--red);
+  font-weight: 700;
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.jobMain h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.jobMeta {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+@media (max-width: 560px) {
+  .job {
+    align-items: flex-start;
+  }
+}
