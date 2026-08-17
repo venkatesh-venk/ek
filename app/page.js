@@ -1,86 +1,29 @@
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import CtaBand from "@/components/CtaBand";
+import FeatureSection from "@/components/FeatureSection";
+import HeroCarousel from "@/components/HeroCarousel";
 import {
-  services,
   stats,
-  values,
-  process,
+  heroSlides,
+  industries,
+  platformFeatures,
+  useCases,
+  compliance,
   techStack,
   portfolio,
   testimonials,
+  clientLogos,
 } from "@/lib/content";
 import styles from "./home.module.css";
 
 export default function HomePage() {
   return (
     <>
-      {/* HERO */}
-      <section className={styles.hero}>
-        <div className={styles.heroGlowA} />
-        <div className={styles.heroGlowB} />
-        <div className={`container ${styles.heroInner}`}>
-          <div className={styles.heroCopy}>
-            <span className={styles.badge}>
-              <span className={styles.badgeDot} /> Bengaluru • Software Engineering Studio
-            </span>
-            <h1 className={styles.heroTitle}>
-              We build software that moves your{" "}
-              <span className="text-grad">business forward</span>.
-            </h1>
-            <p className={styles.heroText}>
-              ESIKA INFOTECH is a product engineering company crafting web, mobile,
-              cloud and data solutions — reliable, scalable and beautifully designed.
-            </p>
-            <div className={styles.heroActions}>
-              <Link href="/contact" className="btn btn--primary">
-                Start a Project
-              </Link>
-              <Link href="/portfolio" className="btn btn--ghost">
-                View Our Work
-              </Link>
-            </div>
-            <div className={styles.heroTrust}>
-              <div>
-                <strong>10+</strong>
-                <span>Years building</span>
-              </div>
-              <div className={styles.divider} />
-              <div>
-                <strong>120+</strong>
-                <span>Projects shipped</span>
-              </div>
-              <div className={styles.divider} />
-              <div>
-                <strong>45+</strong>
-                <span>Global clients</span>
-              </div>
-            </div>
-          </div>
+      {/* ── HERO ── */}
+      <HeroCarousel slides={heroSlides} />
 
-          <div className={styles.heroArt} aria-hidden="true">
-            <div className={styles.orbCard}>
-              <div className={styles.codeDots}>
-                <span /> <span /> <span />
-              </div>
-              <pre className={styles.code}>
-{`export function deploy() {
-  const app = build(ideas);
-  return ship(app, {
-    scale: "cloud",
-    quality: "high",
-  });
-}`}
-              </pre>
-            </div>
-            <div className={`${styles.floatChip} ${styles.chip1}`}>☁ Cloud-native</div>
-            <div className={`${styles.floatChip} ${styles.chip2}`}>✦ AI-ready</div>
-            <div className={`${styles.floatChip} ${styles.chip3}`}>◆ 99.9% uptime</div>
-          </div>
-        </div>
-      </section>
-
-      {/* STATS */}
+      {/* ── STATS ── */}
       <section className={styles.stats}>
         <div className={`container ${styles.statsGrid}`}>
           {stats.map((s) => (
@@ -92,26 +35,43 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SERVICES */}
+      {/* ── CLIENT STRIP ── */}
+      <section className={styles.clientStrip}>
+        <div className="container">
+          <p className={styles.clientLabel}>Trusted by leading organizations</p>
+          <div className={styles.clientLogos}>
+            {clientLogos.map((name) => (
+              <span key={name} className={styles.clientLogo}>{name}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── INDUSTRIES ── */}
       <section className="section">
         <div className="container">
           <div className="section-head section-head--center">
-            <span className="eyebrow">What we do</span>
-            <h2>End-to-end software services</h2>
+            <span className="eyebrow">Industries we serve</span>
+            <h2>Deep expertise in regulated, mission-critical sectors</h2>
             <p>
-              From the first line of code to production scale, we cover the full
-              lifecycle of building great digital products.
+              We don&apos;t do generic IT consulting. Our teams specialize in the
+              systems, regulations, and operational demands of banking and aviation.
             </p>
           </div>
-          <div className="grid grid-3">
-            {services.map((s, i) => (
-              <Reveal key={s.slug} delay={i * 60}>
-                <article className={`card ${styles.serviceCard}`}>
-                  <div className={styles.serviceIcon}>{s.icon}</div>
-                  <h3>{s.title}</h3>
-                  <p>{s.summary}</p>
+          <div className="grid grid-2">
+            {industries.map((ind, i) => (
+              <Reveal key={ind.slug} delay={i * 80}>
+                <article className={`card ${styles.industryCard}`}>
+                  <div className={styles.industryIcon}>{ind.icon}</div>
+                  <h3>{ind.title}</h3>
+                  <p>{ind.summary}</p>
+                  <ul className={styles.industryList}>
+                    {ind.highlights.map((h) => (
+                      <li key={h}><span>✓</span> {h}</li>
+                    ))}
+                  </ul>
                   <Link href="/services" className={styles.cardLink}>
-                    Learn more <span aria-hidden="true">→</span>
+                    Explore services →
                   </Link>
                 </article>
               </Reveal>
@@ -120,31 +80,73 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* WHY US */}
-      <section className="section section--alt">
+      {/* ── PLATFORM FEATURES (Navori-style alternating sections) ── */}
+      {platformFeatures.map((f, i) => (
+        <FeatureSection
+          key={f.id}
+          eyebrow={f.eyebrow}
+          title={f.title}
+          description={f.description}
+          bullets={f.bullets}
+          cta={f.cta}
+          visual={f.visual}
+          reverse={f.reverse}
+          alt={i % 2 === 1}
+        />
+      ))}
+
+      {/* ── USE CASES GRID ── */}
+      <section className="section section--navy">
         <div className="container">
-          <div className={styles.whyGrid}>
+          <div className="section-head section-head--center">
+            <span className="eyebrow">Solutions</span>
+            <h2>What we help banks and airlines achieve</h2>
+            <p style={{ color: "#a9c0da" }}>
+              From core system modernization to 24/7 managed operations — comprehensive IT consulting across the enterprise lifecycle.
+            </p>
+          </div>
+          <div className={styles.useCaseGrid}>
+            {useCases.map((uc, i) => (
+              <Reveal key={uc.title} delay={i * 40}>
+                <div className={styles.useCase}>
+                  <span className={styles.useCaseTag}>{uc.industry}</span>
+                  <h3>{uc.title}</h3>
+                  <p>{uc.text}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+          <div className={styles.useCaseCta}>
+            <Link href="/services" className="btn btn--light">
+              Explore all services
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── COMPLIANCE / ENTERPRISE TRUST ── */}
+      <section className="section">
+        <div className="container">
+          <div className={styles.complianceGrid}>
             <div>
-              <span className="eyebrow">Why ESIKA</span>
-              <h2 className={styles.whyTitle}>
-                A partner that owns outcomes, not just tasks
+              <span className="eyebrow">Enterprise-ready</span>
+              <h2 className={styles.complianceTitle}>
+                Built for compliance, security, and scale
               </h2>
-              <p className={styles.whyText}>
-                We combine senior engineering, thoughtful design and a bias for
-                shipping. You get a dedicated team that understands your domain and
-                sweats the details that make products succeed.
+              <p className={styles.complianceDesc}>
+                Banking and aviation demand the highest standards. Our practices align
+                with international frameworks so your systems are audit-ready from day one.
               </p>
-              <Link href="/about" className="btn btn--blue">
-                More about us
+              <Link href="/contact" className="btn btn--blue">
+                Discuss your requirements
               </Link>
             </div>
-            <div className="grid grid-2">
-              {values.map((v, i) => (
-                <Reveal key={v.title} delay={i * 60}>
-                  <div className={`card ${styles.valueCard}`}>
-                    <div className={styles.valueBar} />
-                    <h3>{v.title}</h3>
-                    <p>{v.text}</p>
+            <div className={styles.complianceCards}>
+              {compliance.map((c, i) => (
+                <Reveal key={c.label} delay={i * 50}>
+                  <div className={`card ${styles.compCard}`}>
+                    <strong>{c.label}</strong>
+                    <span>{c.desc}</span>
                   </div>
                 </Reveal>
               ))}
@@ -153,58 +155,32 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* PROCESS */}
-      <section className="section">
+      {/* ── TECH STACK ── */}
+      <section className="section section--alt">
         <div className="container">
           <div className="section-head section-head--center">
-            <span className="eyebrow">How we work</span>
-            <h2>A proven delivery process</h2>
-            <p>Transparent, iterative and built to reduce risk at every step.</p>
-          </div>
-          <div className="grid grid-4">
-            {process.map((p, i) => (
-              <Reveal key={p.step} delay={i * 70}>
-                <div className={styles.stepCard}>
-                  <span className={styles.stepNum}>{p.step}</span>
-                  <h3>{p.title}</h3>
-                  <p>{p.text}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* TECH STACK */}
-      <section className="section section--navy">
-        <div className="container">
-          <div className="section-head section-head--center">
-            <span className="eyebrow">Our toolbox</span>
-            <h2>Technologies we love</h2>
-            <p style={{ color: "#a9c0da" }}>
-              We choose the right tool for the job — modern, proven and production-ready.
-            </p>
+            <span className="eyebrow">Technology</span>
+            <h2>Enterprise-grade technology stack</h2>
+            <p>Proven platforms and tools used across our banking and aviation engagements.</p>
           </div>
           <div className={styles.stackWrap}>
             {techStack.map((t) => (
-              <span key={t} className={styles.stackChip}>
-                {t}
-              </span>
+              <span key={t} className={styles.stackChip}>{t}</span>
             ))}
           </div>
         </div>
       </section>
 
-      {/* PORTFOLIO PREVIEW */}
+      {/* ── CASE STUDIES PREVIEW ── */}
       <section className="section">
         <div className="container">
           <div className={styles.portfolioHead}>
             <div>
-              <span className="eyebrow">Selected work</span>
-              <h2>Products we're proud of</h2>
+              <span className="eyebrow">Case studies</span>
+              <h2>Proven results for banks and airlines</h2>
             </div>
             <Link href="/portfolio" className="btn btn--ghost">
-              View all projects
+              View all case studies
             </Link>
           </div>
           <div className="grid grid-3">
@@ -226,18 +202,18 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* TESTIMONIALS */}
+      {/* ── TESTIMONIALS ── */}
       <section className="section section--alt">
         <div className="container">
           <div className="section-head section-head--center">
-            <span className="eyebrow">Client love</span>
-            <h2>What partners say</h2>
+            <span className="eyebrow">Client voices</span>
+            <h2>What our partners say</h2>
           </div>
           <div className="grid grid-3">
             {testimonials.map((t, i) => (
               <Reveal key={t.name} delay={i * 70}>
                 <figure className={`card ${styles.quoteCard}`}>
-                  <div className={styles.quoteMark}>“</div>
+                  <div className={styles.quoteMark}>&ldquo;</div>
                   <blockquote>{t.quote}</blockquote>
                   <figcaption>
                     <strong>{t.name}</strong>
@@ -250,7 +226,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      <CtaBand />
+      <CtaBand
+        title="Ready to modernize your banking or aviation IT?"
+        text="Book a free consultation with our domain experts. We'll assess your current landscape and recommend a practical path forward."
+        primary={{ href: "/contact", label: "Book a Consultation" }}
+        secondary={{ href: "/services", label: "Explore Services" }}
+      />
     </>
   );
 }

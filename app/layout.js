@@ -5,24 +5,24 @@ import Footer from "@/components/Footer";
 export const metadata = {
   metadataBase: new URL("https://www.esika.in"),
   title: {
-    default: "ESIKA INFOTECH — Software, Cloud & Data Engineering",
+    default: "ESIKA INFOTECH — IT Consulting for Banking & Aviation",
     template: "%s | ESIKA INFOTECH",
   },
   description:
-    "ESIKA INFOTECH PVT LTD is a Bengaluru-based software company building web & mobile apps, cloud platforms, and data/AI solutions for growing businesses.",
+    "ESIKA INFOTECH provides enterprise IT consulting for banks and airlines — core banking modernization, aviation systems, cloud migration, data analytics, and managed services.",
   keywords: [
     "ESIKA INFOTECH",
-    "software company Bangalore",
-    "web development",
-    "cloud",
-    "DevOps",
-    "data engineering",
-    "AI",
+    "banking IT consulting",
+    "aviation IT consulting",
+    "core banking modernization",
+    "airline systems integration",
+    "cloud migration banking",
+    "managed services",
   ],
   openGraph: {
-    title: "ESIKA INFOTECH — Software, Cloud & Data Engineering",
+    title: "ESIKA INFOTECH — IT Consulting for Banking & Aviation",
     description:
-      "Bengaluru-based software company building modern web, cloud and data products.",
+      "Enterprise IT consulting for banks and airlines — from core systems to cloud and managed operations.",
     url: "https://www.esika.in",
     siteName: "ESIKA INFOTECH",
     type: "website",

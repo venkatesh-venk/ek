@@ -163,3 +163,31 @@
     grid-template-columns: 1fr;
   }
 }
+
+.indBanner {
+  display: flex;
+  gap: 20px;
+  padding: 28px 32px;
+  align-items: flex-start;
+}
+
+.indBanner:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.indIcon {
+  font-size: 2.2rem;
+  flex: none;
+}
+
+.indBanner h3 {
+  font-size: 1.15rem;
+  margin-bottom: 6px;
+}
+
+.indBanner p {
+  color: var(--slate);
+  font-size: 0.95rem;
+  margin: 0;
+}

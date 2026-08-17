@@ -6,7 +6,7 @@ import styles from "./contact.module.css";
 export const metadata = {
   title: "Contact",
   description:
-    "Get in touch with ESIKA INFOTECH. Visit us in Koramangala, Bengaluru, email info@esika.in or call 080 6897 0818.",
+    "Contact ESIKA INFOTECH for banking and aviation IT consulting. Bengaluru office — info@esika.in, 080 6897 0818.",
 };
 
 const cards = [
@@ -34,9 +34,14 @@ export default function ContactPage() {
     <>
       <PageHero
         eyebrow="Contact"
-        title="Let's start a conversation"
-        subtitle="Tell us about your project, ask a question, or just say hello. We'd love to hear from you."
+        title="Let's discuss your IT transformation"
+        subtitle="Whether you're modernizing core banking or integrating airline systems, our consultants are ready to help."
         crumbs={["Home", "Contact"]}
+        stats={[
+          { value: "< 24h", label: "Typical response time" },
+          { value: "Bengaluru", label: "HQ office" },
+          { value: "Mon–Fri", label: "9:30 AM – 6:30 PM IST" },
+        ]}
       />
 
       <section className="section">

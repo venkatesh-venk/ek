@@ -8,9 +8,9 @@ import styles from "./Navbar.module.css";
 
 const links = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
-  { href: "/portfolio", label: "Portfolio" },
+  { href: "/portfolio", label: "Case Studies" },
+  { href: "/about", label: "About" },
   { href: "/careers", label: "Careers" },
   { href: "/contact", label: "Contact" },
 ];
@@ -56,7 +56,7 @@ export default function Navbar() {
             );
           })}
           <Link href="/contact" className={`btn btn--primary ${styles.cta}`}>
-            Get a Quote
+            Book a Consultation
           </Link>
         </nav>
 

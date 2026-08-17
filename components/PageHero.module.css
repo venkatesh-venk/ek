@@ -79,3 +79,46 @@
   max-width: 640px;
   margin-top: 6px;
 }
+
+.statRow {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.statItem {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding-left: 22px;
+}
+
+.statItem:first-child {
+  padding-left: 0;
+}
+
+.statDivider {
+  position: absolute;
+  left: 0;
+  top: 4px;
+  bottom: 4px;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.statItem strong {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.statItem span {
+  font-size: 0.86rem;
+  color: #9fb3ca;
+  font-weight: 500;
+}

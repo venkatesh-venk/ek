@@ -2,20 +2,20 @@ import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import CtaBand from "@/components/CtaBand";
 import Reveal from "@/components/Reveal";
-import { stats, values, company } from "@/lib/content";
+import { stats, values, industries, company } from "@/lib/content";
 import styles from "./about.module.css";
 
 export const metadata = {
   title: "About Us",
   description:
-    "Learn about ESIKA INFOTECH — a Bengaluru-based software engineering company delivering web, cloud and data solutions with senior talent and a partnership mindset.",
+    "ESIKA INFOTECH is a Bengaluru-based IT consulting firm specializing in banking and aviation — core systems, digital transformation, and managed operations.",
 };
 
 const timeline = [
-  { year: "2014", title: "Founded in Bengaluru", text: "Started as a small team of engineers with a passion for building quality software." },
-  { year: "2017", title: "Cloud practice launched", text: "Expanded into cloud migration and DevOps as clients scaled their platforms." },
-  { year: "2020", title: "Data & AI division", text: "Added data engineering and applied ML to help clients make smarter decisions." },
-  { year: "2024", title: "45+ clients worldwide", text: "Grew into a trusted product engineering partner across industries and geographies." },
+  { year: "2010", title: "Founded in Bengaluru", text: "Started as a specialist IT consulting team focused on banking systems integration." },
+  { year: "2014", title: "Aviation practice launched", text: "Expanded into airline reservation systems, airport IT, and crew management platforms." },
+  { year: "2018", title: "Cloud & data practice", text: "Added cloud migration, data platforms, and analytics for regulated industries." },
+  { year: "2024", title: "40+ banking & airline clients", text: "Grew into a trusted enterprise partner across India and international markets." },
 ];
 
 export default function AboutPage() {
@@ -23,34 +23,37 @@ export default function AboutPage() {
     <>
       <PageHero
         eyebrow="About ESIKA"
-        title="A software company built on craft and trust"
-        subtitle="We're a team of engineers, designers and problem-solvers helping businesses turn ideas into dependable digital products."
+        title="IT consulting built for banking and aviation"
+        subtitle="For over 15 years we've partnered with banks and airlines to modernize technology, reduce risk, and deliver mission-critical systems that perform."
         crumbs={["Home", "About"]}
+        stats={[
+          { value: "15+", label: "Years in business" },
+          { value: "40+", label: "Banking & airline clients" },
+          { value: "200+", label: "Engagements delivered" },
+        ]}
       />
 
-      {/* INTRO SPLIT */}
       <section className="section">
         <div className="container">
           <div className={styles.split}>
             <div>
               <span className="eyebrow">Who we are</span>
               <h2 className={styles.h2}>
-                Engineering partners for the products that matter to you
+                Domain experts, not generalists
               </h2>
               <p className={styles.lead}>
-                {company.short} is a product engineering company headquartered in
-                Koramangala, Bengaluru. For over a decade we've partnered with
-                startups and enterprises to design, build and scale software that
-                people rely on every day.
+                {company.short} is an enterprise IT consulting firm headquartered in
+                Koramangala, Bengaluru. We specialize exclusively in banking and
+                aviation — the regulated, mission-critical industries where downtime
+                is not an option.
               </p>
               <p className={styles.body}>
-                We believe great software comes from small, senior teams who care
-                deeply about the outcome. No hand-offs to junior benches, no
-                black-box process — just focused engineers working transparently
-                alongside you.
+                Our consultants bring deep domain knowledge of core banking platforms,
+                payment systems, PSS integration, and enterprise architecture. We
+                embed with your team to deliver outcomes, not just slide decks.
               </p>
               <div className={styles.introActions}>
-                <Link href="/contact" className="btn btn--primary">Work with us</Link>
+                <Link href="/contact" className="btn btn--primary">Book a consultation</Link>
                 <Link href="/careers" className="btn btn--ghost">Join the team</Link>
               </div>
             </div>
@@ -58,15 +61,15 @@ export default function AboutPage() {
               <div className={styles.missionCard}>
                 <h3>Our Mission</h3>
                 <p>
-                  To engineer software that is reliable, scalable and genuinely
-                  useful — empowering our clients to grow with confidence.
+                  To be the most trusted IT consulting partner for banks and airlines
+                  — delivering secure, scalable technology that powers growth.
                 </p>
               </div>
               <div className={styles.visionCard}>
                 <h3>Our Vision</h3>
                 <p>
-                  To be the most trusted engineering partner for ambitious teams
-                  building the future of their industries.
+                  To set the standard for domain-driven IT consulting in regulated
+                  industries across India and beyond.
                 </p>
               </div>
             </div>
@@ -74,7 +77,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* STATS STRIP */}
       <section className="section--tight section--alt">
         <div className="container">
           <div className={styles.statStrip}>
@@ -88,13 +90,31 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* VALUES */}
       <section className="section">
+        <div className="container">
+          <div className="section-head section-head--center">
+            <span className="eyebrow">Industries</span>
+            <h2>Where we focus</h2>
+          </div>
+          <div className="grid grid-2">
+            {industries.map((ind, i) => (
+              <Reveal key={ind.slug} delay={i * 60}>
+                <div className={`card ${styles.indCard}`}>
+                  <span className={styles.indIcon}>{ind.icon}</span>
+                  <h3>{ind.title}</h3>
+                  <p>{ind.summary}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--alt">
         <div className="container">
           <div className="section-head section-head--center">
             <span className="eyebrow">What drives us</span>
             <h2>Our core values</h2>
-            <p>The principles that shape how we build and how we partner.</p>
           </div>
           <div className="grid grid-4">
             {values.map((v, i) => (
@@ -110,12 +130,11 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* TIMELINE */}
-      <section className="section section--alt">
+      <section className="section">
         <div className="container">
           <div className="section-head section-head--center">
             <span className="eyebrow">Our journey</span>
-            <h2>A decade of building</h2>
+            <h2>15 years of enterprise consulting</h2>
           </div>
           <div className={styles.timeline}>
             {timeline.map((t, i) => (
@@ -135,10 +154,10 @@ export default function AboutPage() {
       </section>
 
       <CtaBand
-        title="Want to know if we're a good fit?"
-        text="Let's have a quick chat about your goals — no obligation, just a useful conversation."
-        primary={{ href: "/contact", label: "Talk to us" }}
-        secondary={{ href: "/portfolio", label: "See our work" }}
+        title="Let's discuss your IT transformation goals"
+        text="Whether you're modernizing core banking or integrating airline systems, our domain experts are ready to help."
+        primary={{ href: "/contact", label: "Book a consultation" }}
+        secondary={{ href: "/portfolio", label: "See case studies" }}
       />
     </>
   );
