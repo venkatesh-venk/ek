@@ -1,6 +1,6 @@
-# ESIKA INFOTECH — Company Website
+# ES INFOTECH — Website
 
-A modern, multi-page marketing website for **ESIKA INFOTECH PVT LTD**, built as a
+A modern, multi-page marketing website for **ES INFOTECH PVT LTD**, built as a
 pure [Next.js](https://nextjs.org/) application (App Router) with no UI frameworks —
 just React and hand-crafted CSS Modules using the brand's red + blue identity.
 
@@ -55,4 +55,4 @@ public/         # Logo and static assets
 
 ---
 
-© ESIKA INFOTECH PVT LTD
+© ES INFOTECH PVT LTD

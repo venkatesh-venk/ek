@@ -5,7 +5,7 @@ import Link from "next/link";
 import PlatformVisual from "./PlatformVisual";
 import styles from "./HeroCarousel.module.css";
 
-const AUTOPLAY_MS = 6500;
+const AUTOPLAY_MS = 3000;
 
 export default function HeroCarousel({ slides }) {
   const [index, setIndex] = useState(0);
