@@ -10,7 +10,9 @@ export default function Footer() {
       <div className="container">
         <div className={styles.top}>
           <div className={styles.brandCol}>
-            <Logo variant="light" />
+            <span className={styles.logoChip}>
+              <Logo />
+            </span>
             <p className={styles.tagline}>
               IT consulting for banking and aviation — core systems, digital
               channels, cloud, data, and managed operations.
