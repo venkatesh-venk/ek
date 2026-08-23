@@ -1,3 +1,4 @@
+import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import CtaBand from "@/components/CtaBand";
 import Reveal from "@/components/Reveal";
@@ -56,22 +57,17 @@ export default function CareersPage() {
             {jobs.map((j, i) => (
               <Reveal key={j.title} delay={i * 40}>
                 <div className={`card ${styles.job}`}>
-                  <div className={styles.jobMain}>
+                  <Link href={`/careers/${j.slug}`} className={styles.jobMain}>
                     <span className={styles.jobDept}>{j.dept}</span>
                     <h3>{j.title}</h3>
                     <div className={styles.jobMeta}>
                       <span>◷ {j.type}</span>
                       <span>◉ {j.location}</span>
                     </div>
-                  </div>
-                  <a
-                    href={`mailto:${company.email}?subject=Application: ${encodeURIComponent(
-                      j.title
-                    )}`}
-                    className="btn btn--ghost"
-                  >
-                    Apply
-                  </a>
+                  </Link>
+                  <Link href={`/careers/${j.slug}`} className="btn btn--ghost">
+                    View role
+                  </Link>
                 </div>
               </Reveal>
             ))}
