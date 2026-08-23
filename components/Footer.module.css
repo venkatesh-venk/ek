@@ -12,6 +12,13 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.logoChip {
+  display: inline-flex;
+  background: #fff;
+  padding: 10px 16px;
+  border-radius: 10px;
+}
+
 .brandCol .tagline {
   margin-top: 18px;
   max-width: 320px;
