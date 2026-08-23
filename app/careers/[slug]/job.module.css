@@ -1,0 +1,70 @@
+.layout {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.block + .block {
+  margin-top: 36px;
+}
+
+.block h2 {
+  font-size: 1.3rem;
+  margin-bottom: 14px;
+}
+
+.list {
+  display: grid;
+  gap: 12px;
+  padding-left: 20px;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.list li {
+  list-style: disc;
+}
+
+.applyCard {
+  position: sticky;
+  top: 100px;
+  padding: 28px;
+}
+
+.applyCard h3 {
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+}
+
+.applyCard p {
+  color: var(--muted);
+  font-size: 0.94rem;
+  margin-bottom: 18px;
+}
+
+.applyCard .btn,
+.applyCard a.btn {
+  width: 100%;
+  justify-content: center;
+}
+
+.backLink {
+  display: block;
+  margin-top: 16px;
+  text-align: center;
+  color: var(--blue);
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+@media (max-width: 860px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .applyCard {
+    position: static;
+  }
+}
