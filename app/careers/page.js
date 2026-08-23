@@ -7,7 +7,7 @@ import styles from "./careers.module.css";
 export const metadata = {
   title: "Careers",
   description:
-    "Join ESIKA INFOTECH. Explore open engineering, design and data roles in Bengaluru and build meaningful software with a senior team.",
+    "Join ESIKA INFOTECH. Open roles in banking systems consulting, aviation IT, cloud architecture, integration, and managed services.",
 };
 
 export default function CareersPage() {
@@ -15,18 +15,22 @@ export default function CareersPage() {
     <>
       <PageHero
         eyebrow="Careers"
-        title="Build your best work with us"
-        subtitle="We're a team that cares about craft, growth and each other. Come solve interesting problems with modern technology."
+        title="Build mission-critical systems with us"
+        subtitle="Join a team that consults for banks and airlines — working on core banking, aviation systems, and enterprise platforms that matter."
         crumbs={["Home", "Careers"]}
+        stats={[
+          { value: String(jobs.length), label: "Open roles" },
+          { value: String(perks.length), label: "Employee perks" },
+          { value: "Bengaluru", label: "HQ, hybrid-friendly" },
+        ]}
       />
 
-      {/* PERKS */}
       <section className="section">
         <div className="container">
           <div className="section-head section-head--center">
             <span className="eyebrow">Life at ESIKA</span>
-            <h2>Why you'll love it here</h2>
-            <p>We invest in our people because great software comes from great teams.</p>
+            <h2>Why join our team</h2>
+            <p>Work on enterprise systems that power millions of transactions and thousands of flights.</p>
           </div>
           <div className="grid grid-3">
             {perks.map((p, i) => (
@@ -41,13 +45,12 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* OPEN ROLES */}
       <section className="section section--alt">
         <div className="container">
           <div className="section-head">
             <span className="eyebrow">Open roles</span>
-            <h2>We're hiring</h2>
-            <p>Don't see the perfect fit? Write to us anyway — we love meeting talented people.</p>
+            <h2>We&apos;re hiring</h2>
+            <p>Don&apos;t see the perfect fit? Write to us — we&apos;re always looking for banking and aviation IT talent.</p>
           </div>
           <div className={styles.jobs}>
             {jobs.map((j, i) => (
@@ -77,9 +80,9 @@ export default function CareersPage() {
       </section>
 
       <CtaBand
-        title="Don't see your role?"
-        text="Send your resume to info@esika.in and tell us how you'd like to contribute."
-        primary={{ href: "mailto:info@esika.in", label: "Send your resume" }}
+        title="Ready to make an impact?"
+        text={`Send your resume to ${company.email} and tell us about your banking or aviation IT experience.`}
+        primary={{ href: `mailto:${company.email}`, label: "Send your resume" }}
         secondary={{ href: "/about", label: "Learn about us" }}
       />
     </>

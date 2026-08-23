@@ -12,8 +12,8 @@ export default function Footer() {
           <div className={styles.brandCol}>
             <Logo variant="light" />
             <p className={styles.tagline}>
-              Engineering reliable software, cloud and data platforms that help
-              ambitious businesses move faster.
+              IT consulting for banking and aviation — core systems, digital
+              channels, cloud, data, and managed operations.
             </p>
             <div className={styles.social}>
               <a href="https://www.esika.in" aria-label="Website" className={styles.socialLink}>in</a>
@@ -26,16 +26,16 @@ export default function Footer() {
             <h4>Company</h4>
             <Link href="/about">About Us</Link>
             <Link href="/services">Services</Link>
-            <Link href="/portfolio">Portfolio</Link>
+            <Link href="/portfolio">Case Studies</Link>
             <Link href="/careers">Careers</Link>
           </div>
 
           <div className={styles.col}>
-            <h4>Services</h4>
-            <Link href="/services">Web &amp; Mobile Apps</Link>
-            <Link href="/services">Cloud &amp; DevOps</Link>
-            <Link href="/services">Data &amp; AI</Link>
-            <Link href="/services">UI/UX Design</Link>
+            <h4>Industries</h4>
+            <Link href="/services">Banking &amp; Financial Services</Link>
+            <Link href="/services">Airlines &amp; Aviation</Link>
+            <Link href="/services">Core Banking Systems</Link>
+            <Link href="/services">Managed Services</Link>
           </div>
 
           <div className={styles.col}>

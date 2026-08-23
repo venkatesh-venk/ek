@@ -5,43 +5,29 @@ import { portfolio } from "@/lib/content";
 import styles from "./portfolio.module.css";
 
 export const metadata = {
-  title: "Portfolio",
+  title: "Case Studies",
   description:
-    "Selected projects delivered by ESIKA INFOTECH across retail, healthcare, fintech, logistics, edtech and agritech.",
+    "ESIKA INFOTECH case studies — core banking modernization, airline PSS integration, payment hubs, and cloud migration for banking and aviation clients.",
 };
 
 const highlights = [
-  { value: "22%", label: "Avg. cost reduction delivered" },
-  { value: "3.2M", label: "Daily events processed" },
-  { value: "99.9%", label: "Platform uptime maintained" },
+  { value: "40M", label: "Accounts migrated (banking)" },
+  { value: "2M+", label: "Daily payment transactions" },
+  { value: "35%", label: "Cloud cost reduction delivered" },
 ];
 
 export default function PortfolioPage() {
   return (
     <>
       <PageHero
-        eyebrow="Our Work"
-        title="Products that deliver real results"
-        subtitle="A snapshot of the platforms and applications we've engineered for clients across industries."
-        crumbs={["Home", "Portfolio"]}
+        eyebrow="Case Studies"
+        title="Proven results for banks and airlines"
+        subtitle="Real engagements across core banking, aviation systems, payments, cloud, and managed operations."
+        crumbs={["Home", "Case Studies"]}
+        stats={highlights}
       />
 
-      {/* HIGHLIGHTS */}
-      <section className="section--tight">
-        <div className="container">
-          <div className={styles.highlights}>
-            {highlights.map((h) => (
-              <div key={h.label} className={styles.hCard}>
-                <div className={styles.hVal}>{h.value}</div>
-                <div className={styles.hLbl}>{h.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* PROJECT GRID */}
-      <section className="section" style={{ paddingTop: 24 }}>
+      <section className="section">
         <div className="container">
           <div className="grid grid-3">
             {portfolio.map((p, i) => (
@@ -65,16 +51,15 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      {/* INDUSTRIES */}
       <section className="section section--alt">
         <div className="container">
           <div className="section-head section-head--center">
             <span className="eyebrow">Industries</span>
-            <h2>Domains we know well</h2>
-            <p>Deep experience means we speak your language from day one.</p>
+            <h2>Sectors we specialize in</h2>
+            <p>Every case study reflects deep domain knowledge in regulated, mission-critical environments.</p>
           </div>
           <div className={styles.industries}>
-            {["Retail", "Healthcare", "Fintech", "Logistics", "EdTech", "AgriTech", "SaaS", "Manufacturing"].map(
+            {["Retail Banking", "Corporate Banking", "Payments", "Full-Service Airlines", "Regional Carriers", "Airport IT", "Wealth Management", "Aviation Ops"].map(
               (ind) => (
                 <span key={ind} className={styles.industry}>
                   {ind}
@@ -86,9 +71,9 @@ export default function PortfolioPage() {
       </section>
 
       <CtaBand
-        title="Have a project in mind?"
-        text="Let's turn your idea into the next success story on this page."
-        primary={{ href: "/contact", label: "Start your project" }}
+        title="Want results like these for your organization?"
+        text="Let's discuss your banking or aviation IT goals and build a roadmap together."
+        primary={{ href: "/contact", label: "Book a consultation" }}
         secondary={{ href: "/services", label: "Our services" }}
       />
     </>

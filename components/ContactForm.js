@@ -106,12 +106,13 @@ export default function ContactForm() {
           <span>Service of interest</span>
           <select name="service" value={form.service} onChange={update}>
             <option value="">Select a service</option>
-            <option>Web &amp; Mobile Applications</option>
-            <option>Cloud &amp; DevOps</option>
-            <option>Data &amp; AI</option>
-            <option>Product &amp; UX Design</option>
-            <option>Enterprise Software</option>
-            <option>Managed Support</option>
+            <option>Digital Transformation Consulting</option>
+            <option>Core Banking &amp; Financial Systems</option>
+            <option>Aviation &amp; Airline Systems</option>
+            <option>Cloud &amp; Infrastructure</option>
+            <option>Data, Analytics &amp; AI</option>
+            <option>Integration &amp; API Strategy</option>
+            <option>Managed Services &amp; Support</option>
           </select>
         </label>
       </div>

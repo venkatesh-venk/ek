@@ -1,203 +1,3 @@
-/* ===================== HERO ===================== */
-.hero {
-  position: relative;
-  overflow: hidden;
-  background: radial-gradient(
-      1200px 600px at 80% -10%,
-      rgba(28, 92, 168, 0.14),
-      transparent 60%
-    ),
-    linear-gradient(180deg, #fbfdff 0%, #f3f7fc 100%);
-  padding: 84px 0 96px;
-}
-
-.heroGlowA,
-.heroGlowB {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  pointer-events: none;
-  opacity: 0.55;
-}
-
-.heroGlowA {
-  width: 420px;
-  height: 420px;
-  top: -120px;
-  right: 6%;
-  background: radial-gradient(circle, rgba(58, 134, 214, 0.6), transparent 70%);
-}
-
-.heroGlowB {
-  width: 320px;
-  height: 320px;
-  bottom: -120px;
-  left: -40px;
-  background: radial-gradient(circle, rgba(225, 27, 34, 0.35), transparent 70%);
-}
-
-.heroInner {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1.08fr 0.92fr;
-  gap: 56px;
-  align-items: center;
-}
-
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  padding: 8px 16px;
-  border-radius: 999px;
-  background: #fff;
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow-sm);
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--slate);
-  margin-bottom: 24px;
-}
-
-.badgeDot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--red);
-  box-shadow: 0 0 0 4px rgba(225, 27, 34, 0.15);
-}
-
-.heroTitle {
-  font-size: clamp(2.4rem, 5.2vw, 3.7rem);
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  margin-bottom: 20px;
-}
-
-.heroText {
-  font-size: 1.16rem;
-  color: var(--slate);
-  max-width: 540px;
-  margin-bottom: 30px;
-}
-
-.heroActions {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-  margin-bottom: 40px;
-}
-
-.heroTrust {
-  display: flex;
-  align-items: center;
-  gap: 26px;
-}
-
-.heroTrust strong {
-  display: block;
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: var(--navy);
-}
-
-.heroTrust span {
-  font-size: 0.85rem;
-  color: var(--muted);
-}
-
-.divider {
-  width: 1px;
-  height: 38px;
-  background: var(--line);
-}
-
-/* Hero art */
-.heroArt {
-  position: relative;
-  min-height: 360px;
-}
-
-.orbCard {
-  position: relative;
-  z-index: 2;
-  background: linear-gradient(160deg, #0e2f5a, #0b2440);
-  border-radius: 20px;
-  padding: 20px;
-  box-shadow: var(--shadow-lg);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.codeDots {
-  display: flex;
-  gap: 7px;
-  margin-bottom: 14px;
-}
-
-.codeDots span {
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
-  background: #ff5f57;
-}
-.codeDots span:nth-child(2) {
-  background: #febc2e;
-}
-.codeDots span:nth-child(3) {
-  background: #28c840;
-}
-
-.code {
-  margin: 0;
-  font-family: "SF Mono", "Fira Code", ui-monospace, Menlo, monospace;
-  font-size: 0.86rem;
-  line-height: 1.7;
-  color: #9fd0ff;
-  white-space: pre;
-  overflow-x: auto;
-}
-
-.floatChip {
-  position: absolute;
-  z-index: 3;
-  background: #fff;
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow);
-  border-radius: 12px;
-  padding: 10px 16px;
-  font-weight: 700;
-  font-size: 0.9rem;
-  color: var(--navy);
-  animation: float 5s ease-in-out infinite;
-}
-
-.chip1 {
-  top: -22px;
-  left: -18px;
-  color: var(--blue-dark);
-}
-.chip2 {
-  bottom: 40px;
-  right: -22px;
-  animation-delay: 1.2s;
-  color: var(--red);
-}
-.chip3 {
-  bottom: -20px;
-  left: 30px;
-  animation-delay: 2.2s;
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
 /* ===================== STATS ===================== */
 .stats {
   margin-top: -34px;
@@ -237,141 +37,196 @@
 
 .statLabel {
   color: var(--muted);
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   font-weight: 500;
 }
 
-/* ===================== SERVICES ===================== */
-.serviceCard {
-  padding: 30px;
+/* ===================== CLIENT STRIP ===================== */
+.clientStrip {
+  padding: 48px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.clientLabel {
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 24px;
+}
+
+.clientLogos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+}
+
+.clientLogo {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--slate);
+  opacity: 0.55;
+  letter-spacing: 0.02em;
+}
+
+/* ===================== INDUSTRIES ===================== */
+.industryCard {
+  padding: 36px 32px;
   height: 100%;
 }
 
-.serviceCard:hover {
+.industryCard:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow);
   border-color: rgba(28, 92, 168, 0.3);
 }
 
-.serviceIcon {
-  width: 54px;
-  height: 54px;
-  display: grid;
-  place-items: center;
-  border-radius: 14px;
-  font-size: 1.5rem;
-  color: #fff;
-  background: var(--grad-brand);
+.industryIcon {
+  font-size: 2.4rem;
+  margin-bottom: 16px;
+}
+
+.industryCard h3 {
+  font-size: 1.35rem;
+  margin-bottom: 10px;
+}
+
+.industryCard > p {
+  color: var(--slate);
+  font-size: 0.98rem;
   margin-bottom: 18px;
 }
 
-.serviceCard h3 {
-  font-size: 1.22rem;
-  margin-bottom: 8px;
+.industryList {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+  display: grid;
+  gap: 8px;
 }
 
-.serviceCard p {
-  color: var(--slate);
-  font-size: 0.97rem;
-  margin-bottom: 16px;
+.industryList li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.94rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.industryList span {
+  color: var(--blue-dark);
+  font-weight: 800;
 }
 
 .cardLink {
   font-weight: 700;
   color: var(--blue-dark);
   font-size: 0.95rem;
-  display: inline-flex;
-  gap: 6px;
-  transition: gap 0.2s ease;
+  transition: color 0.18s ease;
 }
 
 .cardLink:hover {
-  gap: 12px;
   color: var(--red);
 }
 
-/* ===================== WHY US ===================== */
-.whyGrid {
+/* ===================== USE CASES ===================== */
+.useCaseGrid {
   display: grid;
-  grid-template-columns: 0.95fr 1.05fr;
-  gap: 56px;
-  align-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
 }
 
-.whyTitle {
-  font-size: clamp(1.8rem, 3.6vw, 2.5rem);
+.useCase {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius);
+  padding: 24px 20px;
+  height: 100%;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.useCase:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-4px);
+}
+
+.useCaseTag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ff8f94;
+  margin-bottom: 10px;
+}
+
+.useCase h3 {
+  color: #fff;
+  font-size: 1.02rem;
+  margin-bottom: 8px;
+}
+
+.useCase p {
+  color: #9fb3ca;
+  font-size: 0.9rem;
+  margin: 0;
+  line-height: 1.55;
+}
+
+.useCaseCta {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* ===================== COMPLIANCE ===================== */
+.complianceGrid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.complianceTitle {
+  font-size: clamp(1.7rem, 3.2vw, 2.3rem);
   font-weight: 800;
   margin-bottom: 14px;
 }
 
-.whyText {
+.complianceDesc {
   color: var(--slate);
-  font-size: 1.06rem;
+  font-size: 1.05rem;
   margin-bottom: 26px;
 }
 
-.valueCard {
-  padding: 26px;
-  height: 100%;
+.complianceCards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
 }
 
-.valueCard:hover {
-  transform: translateY(-4px);
+.compCard {
+  padding: 20px 22px;
+}
+
+.compCard:hover {
+  transform: translateY(-3px);
   box-shadow: var(--shadow);
 }
 
-.valueBar {
-  width: 40px;
-  height: 4px;
-  border-radius: 4px;
-  background: var(--grad-red);
-  margin-bottom: 16px;
+.compCard strong {
+  display: block;
+  font-size: 0.98rem;
+  color: var(--navy);
+  margin-bottom: 4px;
 }
 
-.valueCard h3 {
-  font-size: 1.1rem;
-  margin-bottom: 6px;
-}
-
-.valueCard p {
-  color: var(--slate);
-  font-size: 0.94rem;
-  margin: 0;
-}
-
-/* ===================== PROCESS ===================== */
-.stepCard {
-  padding: 28px 24px;
-  border-radius: var(--radius);
-  background: var(--surface-2);
-  border: 1px solid var(--line);
-  height: 100%;
-  position: relative;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.stepCard:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow);
-  background: #fff;
-}
-
-.stepNum {
-  font-size: 2.4rem;
-  font-weight: 800;
-  color: rgba(28, 92, 168, 0.16);
-  line-height: 1;
-}
-
-.stepCard h3 {
-  font-size: 1.15rem;
-  margin: 8px 0 8px;
-}
-
-.stepCard p {
-  color: var(--slate);
-  font-size: 0.95rem;
-  margin: 0;
+.compCard span {
+  font-size: 0.88rem;
+  color: var(--muted);
 }
 
 /* ===================== TECH STACK ===================== */
@@ -380,29 +235,29 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 12px;
-  max-width: 820px;
+  max-width: 860px;
   margin: 0 auto;
 }
 
 .stackChip {
   padding: 11px 22px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  color: #dce8f6;
+  background: #fff;
+  border: 1px solid var(--line);
+  color: var(--navy);
   font-weight: 600;
-  font-size: 0.96rem;
-  transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+  font-size: 0.94rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 .stackChip:hover {
-  background: var(--red);
-  border-color: var(--red);
-  color: #fff;
   transform: translateY(-3px);
+  color: var(--red);
+  border-color: rgba(225, 27, 34, 0.35);
 }
 
-/* ===================== PORTFOLIO PREVIEW ===================== */
+/* ===================== CASE STUDIES ===================== */
 .portfolioHead {
   display: flex;
   justify-content: space-between;
@@ -472,13 +327,13 @@
 }
 
 .workBody h3 {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   margin: 8px 0 8px;
 }
 
 .workBody p {
   color: var(--slate);
-  font-size: 0.95rem;
+  font-size: 0.94rem;
   margin: 0;
 }
 
@@ -518,15 +373,11 @@
 }
 
 /* ===================== RESPONSIVE ===================== */
-@media (max-width: 900px) {
-  .heroInner {
-    grid-template-columns: 1fr;
-    gap: 44px;
+@media (max-width: 960px) {
+  .useCaseGrid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  .heroArt {
-    min-height: 300px;
-  }
-  .whyGrid {
+  .complianceGrid {
     grid-template-columns: 1fr;
     gap: 36px;
   }
@@ -542,9 +393,12 @@
   }
 }
 
-@media (max-width: 520px) {
-  .heroTrust {
-    gap: 16px;
+@media (max-width: 560px) {
+  .useCaseGrid {
+    grid-template-columns: 1fr;
+  }
+  .complianceCards {
+    grid-template-columns: 1fr;
   }
   .statsGrid {
     grid-template-columns: 1fr;

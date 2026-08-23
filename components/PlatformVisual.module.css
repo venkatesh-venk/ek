@@ -1,0 +1,114 @@
+.wrap {
+  position: relative;
+}
+
+.window {
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(160deg, #0e2f5a 0%, #0b2440 100%);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(11, 36, 64, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.titleBar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 14px 18px;
+  background: rgba(0, 0, 0, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.titleBar span:nth-child(1) { width: 11px; height: 11px; border-radius: 50%; background: #ff5f57; }
+.titleBar span:nth-child(2) { width: 11px; height: 11px; border-radius: 50%; background: #febc2e; }
+.titleBar span:nth-child(3) { width: 11px; height: 11px; border-radius: 50%; background: #28c840; }
+
+.winTitle {
+  margin-left: 10px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.body {
+  padding: 22px 24px 28px;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.metric {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.metricLabel {
+  display: block;
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 6px;
+}
+
+.metricValue {
+  display: block;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+}
+
+.metricTrend {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #5eead4;
+  background: rgba(94, 234, 212, 0.12);
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  height: 100px;
+  padding-top: 8px;
+}
+
+.barWrap {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.bar {
+  width: 100%;
+  border-radius: 6px 6px 2px 2px;
+  background: linear-gradient(180deg, var(--blue-soft), var(--blue-dark));
+  min-height: 12px;
+  transition: height 0.6s ease;
+}
+
+.glow {
+  position: absolute;
+  inset: 20% -10% -10% -10%;
+  background: radial-gradient(circle, rgba(28, 92, 168, 0.35), transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+@media (max-width: 640px) {
+  .metrics {
+    grid-template-columns: 1fr;
+  }
+}
