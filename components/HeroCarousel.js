@@ -27,11 +27,7 @@ export default function HeroCarousel({ slides }) {
   const slide = slides[index];
 
   return (
-    <section
-      className={`${styles.hero} ${paused ? styles.paused : ""}`}
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-    >
+    <section className={`${styles.hero} ${paused ? styles.paused : ""}`}>
       <div className={styles.heroGlowA} />
       <div className={styles.heroGlowB} />
       <div className={`container ${styles.heroInner}`}>
@@ -64,7 +60,11 @@ export default function HeroCarousel({ slides }) {
         </div>
       </div>
 
-      <div className={`container ${styles.controls}`}>
+      <div
+        className={`container ${styles.controls}`}
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+      >
         <div className={styles.dots} role="tablist" aria-label="Hero slides">
           {slides.map((s, i) => (
             <button
