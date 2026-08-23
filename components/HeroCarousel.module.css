@@ -176,7 +176,7 @@
   border-radius: 999px;
   background: var(--grad-brand);
   transform-origin: left;
-  animation: heroProgress 6500ms linear forwards;
+  animation: heroProgress 3000ms linear forwards;
 }
 
 .paused .dotFill {
